@@ -8,22 +8,19 @@ var Game = {
 
 // Store game actions that should be used in frontend
 var Board = {
-    SelectAction: (index) => {
-        console.log("Selected action " + index);
+    SelectAction: (action) => {
+        console.log("Selected action " + action.name);
     }
 };
 
-// Reads data from data import and populates new Game
-function init() {
-    dataimport.Actions.forEach((action) => {
-        Game.Actions.push(new Action(action.name));
-    });
-
-    Game.Players.push(new Player(PlayerType.human));
-    Game.Players.push(new Player(PlayerType.ai));
-}
 console.log("initializing game");
-init();
+// Read data from data import and populate new Game
+dataimport.Actions.forEach((action) => {
+    Game.Actions.push(new Action(action.name));
+});
+
+Game.Players.push(new Player(PlayerType.HUMAN));
+Game.Players.push(new Player(PlayerType.AI));
 
 console.log(Game);
 

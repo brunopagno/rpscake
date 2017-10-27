@@ -1,6 +1,6 @@
 var PlayerType = {
-    ai: 0,
-    human: 1
+    AI: 0,
+    HUMAN: 1
 }
 
 class Player {
