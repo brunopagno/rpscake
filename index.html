@@ -4,14 +4,31 @@
     <meta charset="UTF-8">
     <title>RPScake</title>
 
+    <link rel="stylesheet" href="style/style.css">
+
     <!-- do not start with a slash because this path should be relative -->
     <script src="script/datastructures.js"></script>
     <script src="data/dataimport.js"></script>
-    <script src="script/main.js"></script>
+    <script src="script/init.js"></script>
 </head>
 <body>
     
-    <p>Hello!</p>
+    <div class="wrapper">
+        <div id="board">
+            <div class="action" onmousedown="Board.SelectAction(0)">
+                Action 0
+            </div>
+            <div class="action" onmousedown="Board.SelectAction(1)">
+                Action 1
+            </div>
+            <div class="action" onmousedown="Board.SelectAction(2)">
+                Action 2
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <script src="script/start.js"></script>
 
 </body>
 </html>

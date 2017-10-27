@@ -6,8 +6,15 @@ var Game = {
     Actions: []
 };
 
+// Store game actions that should be used in frontend
+var Board = {
+    SelectAction: (index) => {
+        console.log("Selected action " + index);
+    }
+};
+
 // Reads data from data import and populates new Game
-function setupData() {
+function init() {
     dataimport.Actions.forEach((action) => {
         Game.Actions.push(new Action(action.name));
     });
@@ -15,8 +22,8 @@ function setupData() {
     Game.Players.push(new Player(PlayerType.human));
     Game.Players.push(new Player(PlayerType.ai));
 }
-console.log("setting up game");
-setupData();
+console.log("initializing game");
+init();
 
 console.log(Game);
 

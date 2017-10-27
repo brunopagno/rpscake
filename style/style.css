@@ -1,0 +1,19 @@
+
+#board {
+    width: 80%;
+    margin: auto;
+    border: 1px solid lightgray;
+}
+
+.action {
+    float: left;
+    border: 1px solid black;
+    background: #cacaca;
+    margin: 0.5em;
+    width: 30%;
+}
+
+/* hack classes */
+.clear {
+    clear: both;
+}
