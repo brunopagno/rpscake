@@ -2,6 +2,26 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.left {
+    float: left;
+    width: 240px;
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.right {
+    margin-left: 240px;
+}
+
+#roundlog {
+    color: darkgray;
+}
+
+#score {
+    border: 1px solid black;
+    padding: 6px 24px;
+}
+
 #board {
     width: 80%;
     margin: auto;

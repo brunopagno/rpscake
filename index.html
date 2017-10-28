@@ -7,20 +7,38 @@
     <!-- do not start href/src with a slash because paths should be relative -->
     <link rel="stylesheet" href="style/style.css">
 
-    <script src="script/models.js"></script>
-    <script src="script/controllers.js"></script>
+    <!-- models -->
+    <script src="game/models.js"></script>
+
+    <!-- controllers -->
+    <script src="game/board_controller.js"></script>
+    <script src="game/score_controller.js"></script>
+
+    <!-- data and initialization -->
     <script src="data/data.js"></script>
-    <script src="script/init.js"></script>
+    <script src="game/init.js"></script>
 </head>
 <body>
     
     <div class="wrapper">
-        <div id="board">
-            <!-- game injected here with script -->
+        <div class="left">
+            <div id="roundlog">
+                <!-- round log -->
+            </div>
+        </div>
+        <div class="right">
+            <div id="score">
+                <!-- score -->
+            </div>
+            <div id="board">
+                <!-- board -->
+            </div>
         </div>
     </div>
 
-    <script src="script/view.js"></script>
+    <script src="game/board_view.js"></script>
+    <script src="game/score_view.js"></script>
+    <script src="game/log_view.js"></script>
 
 </body>
 </html>

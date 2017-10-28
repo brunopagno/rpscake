@@ -1,4 +1,6 @@
 var BoardController = {
+    roundCompletedEvent: [],
+
     selectAction: (player, action) => {
         player.inputSelect(action);
 
@@ -57,7 +59,8 @@ var BoardController = {
             }
         };
         let selections = Game.Players.map((player) => player.selection);
-        Game.Rounds.push(new Round(selections, winner));
+        let thisRound = new Round(selections, winner);
+        Game.Rounds.push(thisRound);
 
         if (winner) {
             console.log(winner.name + " won");
@@ -66,6 +69,10 @@ var BoardController = {
         }
 
         BoardController._clearBoard();
+
+        BoardController.roundCompletedEvent.forEach((listener) => {
+            listener(thisRound);
+        });
     },
 
     _clearBoard: () => {
