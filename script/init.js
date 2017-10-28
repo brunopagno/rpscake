@@ -1,27 +1,18 @@
-console.log("* Starting RPScake");
-
-// Store current game info
+// Store current game state
 var Game = {
     Players: [],
-    Actions: []
+    Actions: [],
+    Rounds: []
 };
 
-// Store game actions that should be used in frontend
-var Board = {
-    SelectAction: (action) => {
-        console.log("Selected action " + action.name);
-    }
-};
-
-console.log("initializing game");
 // Read data from data import and populate new Game
-dataimport.Actions.forEach((action) => {
-    Game.Actions.push(new Action(action.name));
+data.Actions.forEach((action) => {
+    Game.Actions.push(new Action(
+        action.id,
+        action.name,
+        action.winsAgainst
+    ));
 });
 
-Game.Players.push(new Player(PlayerType.HUMAN));
-Game.Players.push(new Player(PlayerType.AI));
-
-console.log(Game);
-
-console.log("done!");
+Game.Players.push(new Player(PlayerType.HUMAN, "Player"));
+Game.Players.push(new Player(PlayerType.AI, "AI - Zero"));
