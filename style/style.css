@@ -6,7 +6,6 @@ body {
     float: left;
     width: 240px;
     max-height: 400px;
-    overflow: scroll;
 }
 
 .right {

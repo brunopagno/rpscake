@@ -62,12 +62,6 @@ var BoardController = {
         let thisRound = new Round(selections, winner);
         Game.Rounds.push(thisRound);
 
-        if (winner) {
-            console.log(winner.name + " won");
-        } else {
-            console.log("tie");
-        }
-
         BoardController._clearBoard();
 
         BoardController.roundCompletedEvent.forEach((listener) => {
