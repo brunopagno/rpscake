@@ -3,42 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>RPScake</title>
-
-    <!-- do not start href/src with a slash because paths should be relative -->
-    <link rel="stylesheet" href="style/style.css">
-
-    <!-- models -->
-    <script src="game/models.js"></script>
-
-    <!-- controllers -->
-    <script src="game/board_controller.js"></script>
-    <script src="game/score_controller.js"></script>
-
-    <!-- data and initialization -->
-    <script src="data/data.js"></script>
-    <script src="game/init.js"></script>
 </head>
 <body>
-    
-    <div class="wrapper">
-        <div class="left">
-            <div id="roundlog">
-                <!-- round log -->
-            </div>
-        </div>
-        <div class="right">
-            <div id="score">
-                <!-- score -->
-            </div>
-            <div id="board">
-                <!-- board -->
-            </div>
-        </div>
-    </div>
 
-    <script src="game/board_view.js"></script>
-    <script src="game/score_view.js"></script>
-    <script src="game/log_view.js"></script>
+    <a href="#" onmousedown="goPlayerVsAI()">Player versus AI</a>
+    <a href="#" onmousedown="goAIVsAI()">AI versus AI</a>
+
+    <script>
+        function goPlayerVsAI() {
+            window.localStorage.setItem("gameMode", "pve");
+            window.location.href = "game.html";
+            return false;
+        }
+
+        function goAIVsAI() {
+            window.localStorage.setItem("gameMode", "eve");
+            window.location.href = "game.html";
+            return false;
+        }
+    </script>
 
 </body>
 </html>

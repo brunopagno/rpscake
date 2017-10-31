@@ -14,5 +14,14 @@ data.Actions.forEach((action) => {
     ));
 });
 
-Game.Players.push(new Player(PlayerType.HUMAN, "Player"));
-Game.Players.push(new Player(PlayerType.AI, "AI - Zero"));
+var gameMode = window.localStorage.getItem("gameMode");
+
+if (gameMode === 'eve') {
+    Game.Players.push(new Player(PlayerType.AI, "AI - Zero"));
+    Game.Players.push(new Player(PlayerType.AI, "AI - One"));
+
+    setInterval(AIController.automaticPlay, 1000);
+} else {
+    Game.Players.push(new Player(PlayerType.HUMAN, "Player"));
+    Game.Players.push(new Player(PlayerType.AI, "AI - Zero"));
+}

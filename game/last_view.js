@@ -1,14 +1,7 @@
-let logView = document.getElementById('roundlog');
+let lastView = document.getElementById('last');
 
-let imagesPath = 'images/';
-let imagesExtension = '.jpg';
-
-let logClass = 'log-item';
-let imgActionClass = 'action';
-
-function appendNewLogElement(round) {
-    let divLog = document.createElement('div');
-    divLog.className = logClass;
+function updateLastView(round) {
+    lastView.textContent = "";
 
     let imgActionA = document.createElement('img');
     imgActionA.className = imgActionClass;
@@ -18,24 +11,17 @@ function appendNewLogElement(round) {
     imgActionB.className = imgActionClass;
     imgActionB.src = imagesPath + round.selectionList[1].name.toLowerCase() + imagesExtension;
 
-    divLog.appendChild(imgActionA);
-    divLog.appendChild(imgActionB);
+    lastView.appendChild(imgActionA);
+    lastView.appendChild(imgActionB);
 
     let resultText = round.winner ? round.winner.name + " won" : "tie";
     let pResult = document.createElement('p');
-    pResult.className = 'clear';
+    
+    pResult.className = round.winner ? "win-" + round.winner.type : "round-tie";
     pResult.textContent =  resultText;
-    divLog.appendChild(pResult);
-
-    logView.appendChild(divLog);
-}
-
-if (Game.Rounds) {
-    Game.Rounds.forEach((round) => {
-        appendNewLogElement(round);
-    });
+    lastView.appendChild(pResult);
 }
 
 BoardController.roundCompletedEvent.push((round) => {
-    appendNewLogElement(round);
+    updateLastView(round);
 });

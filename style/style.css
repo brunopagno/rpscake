@@ -12,6 +12,15 @@ body {
     margin-left: 240px;
 }
 
+img.action {
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.log-item {
+    clear: both;
+}
+
 #roundlog {
     color: darkgray;
 }
@@ -36,6 +45,14 @@ body {
 
 .selected {
     background-color: #facfac;
+}
+
+.win-1 {
+    color: blue;
+}
+
+.win-0 {
+    color: red;
 }
 
 /* hack classes */
