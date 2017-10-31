@@ -28,6 +28,7 @@ function appendNewLogElement(round) {
     divLog.appendChild(pResult);
 
     logView.appendChild(divLog);
+    logView.scrollTop = logView.scrollHeight;
 }
 
 if (Game.Rounds) {

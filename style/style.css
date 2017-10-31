@@ -9,7 +9,8 @@ body {
 }
 
 .right {
-    margin-left: 240px;
+    margin-left: 24px;
+    float: left;
 }
 
 img.action {
@@ -23,6 +24,8 @@ img.action {
 
 #roundlog {
     color: darkgray;
+    height: 650px;
+    overflow-y: scroll;
 }
 
 #score {
@@ -53,6 +56,10 @@ img.action {
 
 .win-0 {
     color: red;
+}
+
+#last {
+    min-height: 82px;
 }
 
 /* hack classes */
